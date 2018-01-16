@@ -57,8 +57,8 @@ class Grid(object):
         assert ox + w <= self.width
         assert oy + h <= self.height
         result = self.__class__(w, h)
-        for y in range(0, h):
-            idx = 0 + (y * w)
+        for y in range(h):
+            idx = y * w
             ouridx = ox + ((oy+y) * self.width)
             result.data[idx:idx+w] = self.data[ouridx:ouridx+w]
         return result
